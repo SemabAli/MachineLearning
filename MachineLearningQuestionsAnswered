@@ -1,0 +1,25 @@
+Data programming through labeling functions generating training sets from data
+
+
+***Basic MAchine Learning Models:
+
+1) Linear (linear regression and SVM)   (if data is linearly separated)
+
+2) Tree based  (Decision tree and random forest, cat boost, gradient boosting--very powerful----predictions of the individual trees are summed)  (Linear relationship is hard to capture)  (Divide and conquer approach can wrk with non-linear data as well)
+
+3) KNN (need feature scaling as distance calculated)(---idea behind it closer objects have same labels)
+
+4) Neural networks
+
+
+******Feature Encoding
+
+1)Tree based 
+In tree based label encoder or factorize can be used tbut dummtencoding is wastage of efoort. XGBoost can handle NA VAlues.
+
+2)Non tree based model
+In non tree neural networks,linear regression dummy encoding as weell as feature scaling[0-1 minmaxscalar] is necessary also for K_Nearest_Neighbour.
+
+**Checking null values check by plotting histogram if one value say -1 has a tall bar from rest of data indicating outlier. 
+
+**use Label encoder(numeric encoding)  with tree based models as if(male==1) not matters but not with regression as weitage increses one hot-encoding is best with non tree based models
