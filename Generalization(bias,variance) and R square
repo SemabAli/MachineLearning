@@ -1,0 +1,42 @@
+Generalization refers to how well the concepts learned by a machine learning model 
+
+apply to specific examples not seen by the model
+Undeft refers to a model that can neither model the training data nor generalize to 
+
+new data.
+
+A model underfits when it is too simple with regards to the data it is trying to 
+
+model.
+Your model is underfitted when you have a high bias.
+
+
+A model underfits when it is too simple with regards to the data it is trying to 
+
+model.
+
+One way to detect such situation is to use the bias–variance approach, which can 
+
+represented like this:
+
+enter image description here
+
+Your model is underfitted when you have a high bias.
+
+To know whether you have a too high bias or a too high variance, you view the 
+
+phenomenon in terms of training and test errors:
+
+high training and testing error = high bias (underfitting)    sol = increase the model 
+
+complexity
+low training error while high testing error(large gap between tra and tes error)= high 
+
+variance(overfitting)    sol= add more data
+
+"Coefficient of Determination" R-squared is a statistical measure of how close the 
+
+data are to the fitted regression line=  1-SSE(sum of squared errors)
+R square will always increase adding our variable.
+
+best fit=1-0=1
