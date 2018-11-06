@@ -53,3 +53,9 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 1) formation about the goodness of fit of a model
 1)  An R2 of 1 indicates that the regression predictions perfectly fit the data
 2) always increases adding variuable
+
+
+
+** financial forcasting
+1) use catboost and random forest paraale and apply linear regression on output of these
+2) random forest works well if less outliers in your data
