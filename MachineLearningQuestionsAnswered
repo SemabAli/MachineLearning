@@ -23,3 +23,17 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 **Checking null values check by plotting histogram if one value say -1 has a tall bar from rest of data indicating outlier. 
 
 **use Label encoder(numeric encoding)  with tree based models as if(male==1) not matters but not with regression as weitage increses one hot-encoding is best with non tree based models
+
+
+*** oversampling
+!) adding examples similar to examplles which have low class labels to balanced data
+
+*** calculating corelation and covarience
+1) peearson to calculate non categorical variable
+2) chi sqaure test for categorical variables
+3) how one variable change effect other
+
+
+*** vanishing gradient 
+1) small change in updation of weights 
+2) sigmoid maps large input space to 0.1 range and then maps to more shorter output space if multiple layers network have
