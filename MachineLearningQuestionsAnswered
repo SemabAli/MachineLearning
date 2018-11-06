@@ -59,3 +59,7 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 ** financial forcasting
 1) use catboost and random forest paraale and apply linear regression on output of these
 2) random forest works well if less outliers in your data
+
+**MUltilabel vs multiclass classification
+1) at a time one class cat or dog or rat
+2) at at time two classes possible one pic conatians cat and dog labels =[1,1,0]
