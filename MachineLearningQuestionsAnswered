@@ -37,3 +37,16 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 *** vanishing gradient 
 1) small change in updation of weights 
 2) sigmoid maps large input space to 0.1 range and then maps to more shorter output space if multiple layers network have
+
+
+** Sckit multilearn
+1) for multilabel classification
+2) use humming loss for multilabel
+
+** CNN have unblanced data
+
+1) class weight function if class0 is 20 times more frequent then set class1 weight to 20times more so that penalty on each is same.
+2) So higher class-weight means you want to put more emphasis on a class.
+3) large kernel size complex features are extrracted same with case of no of filters
+
+
