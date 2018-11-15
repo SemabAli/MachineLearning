@@ -69,3 +69,14 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 1) increasing no of filteres increased prediction probablity
 2) decresing kernel size learns complex features
 3) dropout is like each student answer question rest are quiet it enables rest of nodes to learn same features by deactivating some randonmly.
+
+**Vanilla rnn vs LStM
+
+Vanilla rnn ha vanishing gradient problem and could not able to learn long sequences i.e the cat which comes to our home was red in color  the cats that come to our home yesterday were in red incolor.
+to remember "was or were" vanilla rnn gradient vanishes
+
+exploding gradient can be coreected by gradient clipping whle vanishing gradient is hard to solve
+
+doesn't share features learned across different position of text.activation passing with each timestamp in RNN
+beteen layers
+parameters sharing input layer to hidden layers
