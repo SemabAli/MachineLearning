@@ -96,3 +96,13 @@ exploding gradient can be coreected by gradient clipping whle vanishing gradient
 doesn't share features learned across different position of text.activation passing with each timestamp in RNN
 beteen layers
 parameters sharing input layer to hidden layers
+
+
+****network architecture:
+
+----channel first
+Image (3 x 224 x 224)) ->
+a convolutional part of VGG-16 that returns (512 x 7 x 7) ->
+your new conv2d layer (2 filters) (2 x 7 x 7) ->
+Global Max /Average Pooling layer (2 x 1 x 1) ->
+Softmax (2)
