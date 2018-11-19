@@ -106,3 +106,12 @@ a convolutional part of VGG-16 that returns (512 x 7 x 7) ->
 your new conv2d layer (2 filters) (2 x 7 x 7) ->
 Global Max /Average Pooling layer (2 x 1 x 1) ->
 Softmax (2)
+
+
+** Object Detectors
+1) Faster Rcnn (nas feature extractor)
+
+2) SSD Single shot detector
+for real time video 
+
+3) Yolo
