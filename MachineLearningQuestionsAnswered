@@ -110,8 +110,19 @@ Softmax (2)
 
 ** Object Detectors
 1) Faster Rcnn (nas feature extractor)
-
 2) SSD Single shot detector
 for real time video 
-
 3) Yolo
+
+***   Architectures of CNN (Feature Extracter):
+Alexnet,VGG,Resnet,Inception/Googlenet,Nasnet
+
+*** Different Object Detectors:
+Faster RCNN,SSD , YOLO, Retinanet
+
+**how differnt:
+1) feature extracter
+2) Box encoding
+3) Roi Proposal system
+4) loss function
+5) input image resoultion
