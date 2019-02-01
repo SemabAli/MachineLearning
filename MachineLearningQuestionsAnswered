@@ -126,3 +126,9 @@ Faster RCNN,SSD , YOLO, Retinanet
 3) Roi Proposal system
 4) loss function
 5) input image resoultion
+
+
+*** OCR
+for small documents
+use cptian model(text bounding box predi) + tesseract e-g CNIC
+allign library uses text direction to allign the documents
