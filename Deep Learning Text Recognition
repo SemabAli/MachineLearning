@@ -1,0 +1,94 @@
+from keras.layers import Conv2D,MaxPool2D,Input,LSTM,Reshape,Dense,Lambda,Bidirectional,LeakyReLU,ReLU,Dropout
+from keras import activations, optimizers
+from keras.models import Model,Input
+from keras import backend as K
+from keras.callbacks import Callback
+
+
+
+img_w,img_h = (180*2,32*2)
+
+input = Input(shape=(img_w,img_h,1))
+x = Conv2D(16,5,padding='same')(input)
+x = ReLU()(x)
+x = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+x = Conv2D(16,5,padding='same')(x)
+x = ReLU()(x)
+x = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+x = Conv2D(32,3,padding='same')(x)
+x = ReLU()(x)
+x = Dropout(0.25)(x)
+x = Conv2D(32,3,padding='same')(x)
+x = ReLU()(x)
+x = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+x = Conv2D(64,3,padding='same')(x)
+x = ReLU()(x)
+x = Dropout(0.25)(x)
+x = Conv2D(64,3,padding='same')(x)
+x = ReLU()(x)
+x = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+x = Conv2D(128,3,padding='same')(x)
+x = ReLU()(x)
+x = Dropout(0.25)(x)
+x = Conv2D(128,3,padding='same')(x)
+x = ReLU()(x)
+x = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+
+x = Conv2D(256,3,padding='same')(x)
+x = ReLU()(x)
+x = Dropout(0.25)(x)
+x = Conv2D(256,3,padding='same')(x)
+x = ReLU()(x)
+cnn_output = MaxPool2D(pool_size=(2,2),strides=(2,2))(x)
+
+
+x = Lambda(lambda x :tf.squeeze(x,axis=2))(cnn_output) 
+x = Reshape(target_shape=(32,-1))(x)
+#x = Dense(256,activation='relu')(x)
+x = Bidirectional(LSTM(32,return_sequences=True))(x)
+x = Bidirectional(LSTM(32,return_sequences=True))(x)
+print x.shape
+x = Dense(54,activation='softmax',name='logits')(x)
+print x.shape
+base_model = Model(inputs= input,outputs= x)
+
+
+
+
+def ctc_lambda_func(args):
+    y_pred, labels, input_length, label_length = args
+    y_pred = y_pred[:, 2:, :]
+    return K.ctc_batch_cost(labels, y_pred, input_length, label_length)
+    
+    
+    
+    
+labels = Input(name='the_labels', shape=[12], dtype='float32')
+input_length = Input(name='input_length', shape=[1], dtype='int64')
+label_length = Input(name='label_length', shape=[1], dtype='int64')
+
+loss_out = Lambda(ctc_lambda_func, output_shape=(1,), 
+                  name='ctc')([x, labels, input_length, label_length])
+
+#y_fun = K.function([input],[x])
+#acc = Lambda(char_err_rate,output_shape=(1,), name='acc')([x,labels])
+
+#miou_metric = MeanIoU()
+
+fmodel = Model(input=[input, labels, input_length, label_length], output=[loss_out])
+optimzr = optimizers.adam(lr=0.0001)
+
+fmodel.compile(loss={'ctc': lambda y_true, y_pred: y_pred}, optimizer=optimzr)#,metrics=[char_err_rate([x,labels])]) #previous adadelta
+
+
+
+
+ckpts  = keras.callbacks.ModelCheckpoint('./ckpts/weights{epoch:05d}-loss{loss}.h5', monitor='train_loss', verbose=0, save_best_only=False, save_weights_only=True, mode='auto', period=1)
+
+
+hist = fmodel.fit(x=[X_train,Y_train,input_length,Y_train_length],y=np.zeros((X_train.shape[0],),dtype=np.int8), batch_size=16,epochs=1000,callbacks=[ckpts])
