@@ -25,6 +25,54 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 **use Label encoder(numeric encoding)  with tree based models as if(male==1) not matters but not with regression as weitage increses one hot-encoding is best with non tree based models
 
 
+**************************************Bagging Boosting**********************************************
+ general rule in machine learning is that the more features you have, 
+ the more likely your model will suffer from overfitting and vice versa.
+ Random forest select sunset of features
+ 
+Ensemble methods:
+Predict the output (regression or classification) by combining the output of various individual trees.
+Bagging and random forest both are ensemble methods
+
+1) Averging
+2) stacking
+        all of the other algorithms are trained using the available data, then a combiner algorithm is 
+        trained to make a final prediction using all the predictions of the other algorithms as additional inputs.
+        neural networks with svm,logistic regression
+3) Bagging
+4) Boosting
+
+Bagging:
+multiple decision trees built parallel using subset of observation
+about one-third of the data is not used to train the model and can be used to evaluate its performance.
+These samples are called the out of bag samples. 
+Each tree is constructed using a different bootstrap sample from the original data. 
+About one-third of the cases are left out of the bootstrap sample .
+
+
+Random forest:
+Builts trees parallely and independtly
+Random Forest algorithm randomly selects observations and features to build several decision trees and then averages the results.
+is a kind of bagging alogorthm
+No need of separet testing as out of bag sample used for tesing
+* used for both classification and regression.
+* give feature importance
+* more robust to overfitting than decision trees
+* The real world data is noisy and contains many missing values
+* perfect for multi class classification
+* easy to finetune 2 fetures(No of trees and no of features selected at each node)
+* large trees may slow for real time predictions
+
+
+Boosting:
+only one tree at a time
+Previous trained tree help to correct error in new tree
+* sensitive to overfitting data is noisy
+* large traing time as trees built sequentially
+
+
+
+
 *** oversampling
 !) adding examples similar to examplles which have low class labels to balanced data
 
