@@ -12,6 +12,19 @@ Data programming through labeling functions generating training sets from data
 4) Neural networks
 
 
+***Predictive modeling vs Descriptive
+Predictive models use known results to develop (or train) a model that can be used to predict values for different or new data.
+In predictive modeling, you are essentially trying to create a function closer 
+to original function/process which generated the data you have
+
+Descriptive modeling or clustering is a technique that involves the grouping of data points.
+data points that are in the same group should have similar properties and/or features
+k means-clustering
+SElect no of clusters group classes and randomly intialized them
+calculate distance each data point to these points and assigned them group
+claculate mean afterwards/shift centeroid
+stop when centeroid not have enough movemnt between iteration.
+
 ******Feature Encoding
 
 1)Tree based 
@@ -26,6 +39,9 @@ In non tree neural networks,linear regression dummy encoding as weell as feature
 
 
 **************************************Bagging Boosting**********************************************
+
+DECISION TREE REGREESOR RANDOM FOREST REGREESOR for regression sklearn proviedes
+
  general rule in machine learning is that the more features you have, 
  the more likely your model will suffer from overfitting and vice versa.
  Random forest select sunset of features
