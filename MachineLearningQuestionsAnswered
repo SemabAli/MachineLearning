@@ -11,6 +11,13 @@ Data programming through labeling functions generating training sets from data
 
 4) Neural networks
 
+**************************************
+While many algorithms (such as SVM, K-nearest neighbors, and logistic regression) require features to be normalized/scaled(change range of data/features), 
+intuitively we can think of Principle Component Analysis (PCA) as being a prime example of when normalization is important. 
+In PCA we are interested in the components that maximize the variance.
+
+*****************************************************
+
 
 ***Predictive modeling vs Descriptive
 Predictive models use known results to develop (or train) a model that can be used to predict values for different or new data.
@@ -22,6 +29,9 @@ Descriptive modeling or clustering is a technique that involves the grouping of 
 representing data in the tabular and graphical form. e-g tableau
 
 data points that are in the same group should have similar properties and/or features
+
+
+
 
 ***k means-clustering
 SElect no of clusters group classes and randomly intialized them
