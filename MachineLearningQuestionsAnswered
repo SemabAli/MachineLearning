@@ -18,8 +18,12 @@ In predictive modeling, you are essentially trying to create a function closer
 to original function/process which generated the data you have
 
 Descriptive modeling or clustering is a technique that involves the grouping of data points.
+**Descriptive analytics is the analysis of past (or historical) data to understand trends Descriptive analytics is limited to 
+representing data in the tabular and graphical form. e-g tableau
+
 data points that are in the same group should have similar properties and/or features
-k means-clustering
+
+***k means-clustering
 SElect no of clusters group classes and randomly intialized them
 calculate distance each data point to these points and assigned them group
 claculate mean afterwards/shift centeroid
